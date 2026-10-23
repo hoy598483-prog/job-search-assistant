@@ -1,0 +1,37 @@
+[
+  {
+    "id": "ai-pm-create-and-read-day-one",
+    "turns": [
+      {
+        "query": "目标岗位：AI 产品经理；背景：数学硕士，有 Python 基础，无项目；项目：求职准备 Agent；每日时间：120 分钟。",
+        "expect_any": ["第 1 天", "第1天", "交付物", "验收"]
+      },
+      {
+        "query": "今天做什么？",
+        "expect_any": ["第 1 天", "第1天"]
+      }
+    ]
+  },
+  {
+    "id": "quant-create-plan",
+    "turns": [
+      {
+        "query": "目标岗位：量化研究员，偏 A 股小市值因子研究；背景：数学硕士，有 Python 基础，无量化实习；项目：小市值因子研究与回测报告；每日时间：120 分钟。",
+        "expect_any": ["第 1 天", "第1天", "因子", "回测"]
+      }
+    ]
+  },
+  {
+    "id": "vague-submission-must-not-silently-advance",
+    "turns": [
+      {
+        "query": "目标岗位：AI 产品经理；背景：数学硕士，有 Python 基础；项目：求职准备 Agent；每日时间：120 分钟。",
+        "expect_any": ["第 1 天", "第1天"]
+      },
+      {
+        "query": "做完了。",
+        "expect_any": ["补充", "修改", "返工", "未达标", "第 1 天", "第1天"]
+      }
+    ]
+  }
+]

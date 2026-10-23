@@ -1,0 +1,10 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>知识点问答</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="learning.css"><body class="qa-page"><main>
+<header class="qa-header"><strong>知识点小问答</strong><button id="qa-close">收起</button></header>
+<p id="qa-title">选中一段内容，在右键菜单中选择“用Codex解释”。</p><blockquote id="qa-quote"></blockquote><button id="qa-return">返回原文位置</button>
+<details><summary>本次上下文</summary><pre id="qa-context"></pre></details>
+<button id="qa-connect">连接 Codex</button><p id="qa-connection" role="status">局部对话独立保存，不加入主聊天。</p>
+<label><input id="qa-background" type="checkbox" checked>带入本人已确认的背景摘要</label>
+<div class="qa-shortcuts"><button data-question="请结合我的基础，简短解释这段内容。">用我的基础解释</button><button data-question="请举一个具体例子解释这个知识点。">举一个例子</button><button data-question="先问我一个问题，判断我哪里没理解，再逐步引导。">先问我</button><button data-question="请出一道小题检查我的理解，先不要给答案。">考我一道题</button></div>
+<div id="qa-messages" role="log" aria-live="polite"></div><label>追问<textarea id="qa-input" maxlength="6000" placeholder="只围绕当前知识点继续问…"></textarea></label><button id="qa-send">发送</button><button id="qa-stop" disabled>停止</button>
+<p id="qa-status" role="status"></p><label>我的理解 / 尚存疑问<textarea id="qa-summary" maxlength="4000" placeholder="写下你自己的总结，可编辑后保存"></textarea></label><button id="qa-note">确认收藏到笔记本</button><button id="qa-reset">清空这段问答</button>
+</main><script src="notebook_store.js"></script><script src="qa_store.js"></script><script src="codex_client.js"></script><script src="qa.js"></script></body></html>

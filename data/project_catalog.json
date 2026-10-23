@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "id": "job-prep-agent",
+      "title": "证据型求职准备 Agent",
+      "status": "in_progress",
+      "fit": ["AI产品", "Agent应用开发"],
+      "why_now": "已有招聘样本、提取接口、证据校验和计划状态原型。",
+      "evidence_targets": ["用户洞察与验证", "AI工作流理解", "Python原型与测试"],
+      "deliverables": ["新JD的可追溯提取", "能力差距报告", "两小时计划", "成果反馈与版本记录"],
+      "out_of_scope": ["自动投递", "未授权网页采集", "录用概率预测"],
+      "milestones": [
+        {"id": "m1", "title": "审阅后的新JD进入报告", "minutes": 120, "artifact": "一份新JD提取结果与差距报告", "acceptance": "每项结论保留原文引用；人工确认后才影响计划"},
+        {"id": "m2", "title": "成果提交触发下一步", "minutes": 120, "artifact": "一条成果、审阅记录和下一版本计划", "acceptance": "计划变化能追溯到成果或阻塞证据"}
+      ]
+    },
+    {
+      "id": "knowledge-rag-agent",
+      "title": "企业知识管理 RAG 助手",
+      "status": "alternative",
+      "fit": ["AI产品", "Agent应用开发"],
+      "why_now": "对应企业协作、知识管理和RAG相关岗位信号。",
+      "evidence_targets": ["知识管理场景理解", "RAG基础", "引用与评测"],
+      "deliverables": ["小型资料集", "带引用的问答", "五条评测记录"],
+      "out_of_scope": ["大规模文档接入", "企业生产部署"],
+      "milestones": [
+        {"id": "m1", "title": "来源可追溯的检索原型", "minutes": 120, "artifact": "三份资料和三条带引用回答", "acceptance": "每条回答能定位来源；无依据时拒绝编造"}
+      ]
+    },
+    {
+      "id": "product-research-assistant",
+      "title": "AI 产品需求研究助手",
+      "status": "alternative",
+      "fit": ["AI产品"],
+      "why_now": "直接练习把技术能力转为用户问题、功能假设与验证。",
+      "evidence_targets": ["用户洞察", "产品定义", "实验与复盘"],
+      "deliverables": ["参考资料卡", "问题聚类", "功能假设", "验证记录"],
+      "out_of_scope": ["伪造真实用户访谈", "直接声称市场规模"],
+      "milestones": [
+        {"id": "m1", "title": "问题与假设卡", "minutes": 120, "artifact": "三条引用洞察和一项可验证假设", "acceptance": "洞察与参考原文可追溯；假设能在一周内验证"}
+      ]
+    },
+    {
+      "id": "quant-research-prototype",
+      "title": "可复现量化研究原型",
+      "status": "in_progress_secondary",
+      "fit": ["量化研究", "量化交易研究支持"],
+      "why_now": "数学硕士与量化研究样本中的数理基础相邻，可通过小型可复现实验补充 Python 数据处理与研究证据。",
+      "evidence_targets": ["Python 数据处理", "统计假设与时间序列", "可复现研究与结果表达"],
+      "deliverables": ["日频数据契约", "一个可检验假设", "时间切分实验", "研究报告与限制"],
+      "out_of_scope": ["实盘交易", "收益保证", "复杂深度学习策略", "一周内的生产级策略"],
+      "milestones": [
+        {"id": "m1", "title": "研究问题与数据契约", "minutes": 60, "artifact": "假设卡和CSV字段定义", "acceptance": "说明数据范围、预测窗口、基准与禁止的结论"},
+        {"id": "m2", "title": "无未来数据泄漏的最小实验", "minutes": 120, "artifact": "清洗、特征、时间切分和结果", "acceptance": "特征只使用历史数据；验证期与训练期分开；结果可重跑"}
+      ]
+    }
+  ]
+}

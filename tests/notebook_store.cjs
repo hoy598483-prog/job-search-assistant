@@ -1,0 +1,23 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),{webcrypto}=require('node:crypto');
+const data={};
+const local={async get(keys){return Object.fromEntries((Array.isArray(keys)?keys:[keys]).map(key=>[key,structuredClone(data[key])]))},async set(values){Object.assign(data,structuredClone(values))}};
+const context=vm.createContext({chrome:{storage:{local}},crypto:webcrypto});
+vm.runInContext(fs.readFileSync('browser_companion/notebook_store.js','utf8'),context);
+(async()=>{
+  assert.equal(vm.runInContext('LearningNotebook.validDate("2026-02-31")',context),false);
+  const note=await vm.runInContext('LearningNotebook.save({date:"2026-10-21",direction:"a",title:"SQL聚合",content:"COUNT与去重",kind:"knowledge"})',context);
+  context.noteId=note.id;
+  await vm.runInContext('LearningNotebook.save({id:noteId,date:"2026-10-20",direction:"a",title:"SQL去重",content:"COUNT DISTINCT",kind:"knowledge"})',context);
+  let result=await vm.runInContext('LearningNotebook.all()',context);
+  assert.equal(result.entries.length,1);assert.equal(result.entries[0].date,'2026-10-20');
+  const plan={id:'p1',project:'SQL Agent',tasks:Array.from({length:7},(_,i)=>({day:i+1,title:'任务'+i,action:'做',artifact:'成果',acceptance:'标准',done:true,completed_on:'2026-10-20'}))};
+  data.preparationDirections=[{id:'a',name:'开发',weeklyPlan:plan,weeklyPlanHistory:[structuredClone(plan)]},{id:'b',name:'产品',weeklyPlan:{...structuredClone(plan),id:'p2',tasks:[{day:1,title:'旧任务',done:true}]}}];
+  result=await vm.runInContext('LearningNotebook.all()',context);
+  assert.equal(result.entries.filter(entry=>entry.kind==='task').length,8);
+  assert.equal(result.entries.filter(entry=>entry.kind==='plan').length,1);
+  assert.equal(result.entries.find(entry=>entry.direction==='b').date,null);
+  await vm.runInContext('LearningNotebook.remove(noteId)',context);
+  result=await vm.runInContext('LearningNotebook.all()',context);
+  assert.equal(result.entries.filter(entry=>entry.kind==='knowledge').length,0);
+  console.log('PASS: notebook date validation, edit/delete, completion dates, deduplication, unknown historical dates');
+})().catch(error=>{console.error(error);process.exitCode=1});

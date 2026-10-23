@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "求职助理 · 七天实战",
+  "version": "0.2.0",
+  "description": "主动采集当前岗位，在独立工作台分析、比较和训练；不投递。",
+  "permissions": ["activeTab", "scripting", "storage", "nativeMessaging", "contextMenus", "sidePanel"],
+  "minimum_chrome_version": "116",
+  "background": {"service_worker": "service_worker.js"},
+  "side_panel": {"default_path": "qa.html"},
+  "host_permissions": ["http://127.0.0.1/*"],
+  "action": {"default_popup": "popup.html"},
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'; connect-src http://127.0.0.1:*"}
+}

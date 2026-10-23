@@ -1,0 +1,3 @@
+# Used only for local extraction of text-based PDF resumes.
+pypdf==6.21.1
+pypdfium2==5.14.0

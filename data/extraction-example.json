@@ -1,0 +1,6 @@
+{"items":[
+  {"summary":"用户反馈分析与原型验证","quote":"分析用户反馈，推进AI原型验证。","kind":"duty","relation":"all_of"},
+  {"summary":"Python","quote":"熟悉Python","kind":"required","relation":"single"},
+  {"summary":"RAG或知识图谱实战","quote":"拥有RAG、知识图谱至少一项实战经验。","kind":"required","relation":"any_of"},
+  {"summary":"海外产品经验","quote":"具有海外产品经验者优先。","kind":"preferred","relation":"single"}
+]}

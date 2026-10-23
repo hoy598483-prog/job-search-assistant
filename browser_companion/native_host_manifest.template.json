@@ -1,0 +1,7 @@
+{
+  "name": "com.local.job_companion",
+  "description": "Local Job Companion Native Messaging Host",
+  "path": "HOST_LAUNCHER_PATH",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://EXTENSION_ID/"]
+}

@@ -1,0 +1,7 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>每日课程</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="learning.css"><body><main>
+<p><a href="panel.html">← 返回工作台</a></p><h1 id="course-title">每日课程</h1><p id="course-task"></p>
+<section><button id="course-connect">连接 Codex</button><p id="course-connection" role="status">先选择已接受计划的某一天</p><label><input id="course-web" type="checkbox" checked>允许Codex联网收集官方文档、教材等学习资源</label><button id="course-generate">按我的背景生成课程草案</button><button id="course-stop" disabled>停止</button><button id="course-adopt" disabled>采用这节课程</button><p id="course-status" role="status"></p><pre id="course-stream"></pre></section>
+<section><h2>先修检查</h2><p id="course-prerequisite"></p></section>
+<section><h2>学习目标</h2><p id="lesson-goal" data-course-goal></p><p>选中不理解的文字，右键或点击“询问这个知识点”。原文位置会保留，追问独立保存。</p></section>
+<div id="course-sections"></div><section><h2>项目小练习</h2><pre id="course-exercise"></pre><h3>验收依据</h3><pre id="course-acceptance"></pre></section><section><h2>进一步阅读</h2><div id="course-resources"></div><p id="course-limitations"></p><small>来源由Codex检索并推荐，请打开原文核对；链接未被标记为人工核验通过。</small></section>
+</main><script src="codex_client.js"></script><script src="course_store.js"></script><script src="qa_store.js"></script><script src="course.js"></script><script src="selection_host.js"></script></body></html>

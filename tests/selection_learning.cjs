@@ -1,0 +1,21 @@
+const vm=require('node:vm'),fs=require('node:fs'),assert=require('node:assert/strict'),{webcrypto}=require('node:crypto');
+const data={codexChat:[]},local={async get(key){return {[key]:structuredClone(data[key])}},async set(values){Object.assign(data,structuredClone(values))}};
+const context=vm.createContext({chrome:{storage:{local}},crypto:webcrypto,TextEncoder,URL});
+vm.runInContext(fs.readFileSync('browser_companion/qa_store.js','utf8'),context);
+vm.runInContext(fs.readFileSync('browser_companion/course_store.js','utf8'),context);
+(async()=>{
+  context.input={quote:'次日留存率',paragraph:'次日留存的分母是新增用户',documentKey:'course:1',direction:'a'};
+  const first=await vm.runInContext('SelectionQA.load(SelectionQA.clean(input))',context);
+  await vm.runInContext('SelectionQA.save(SelectionQA.clean(input),[{role:"user",content:"请用集合解释"},{role:"assistant",content:"以新增集合为分母"}],"我的理解")',context);
+  const repeat=await vm.runInContext('SelectionQA.load(SelectionQA.clean(input))',context);
+  assert.equal(first.key,repeat.key);assert.equal(repeat.messages.length,2);
+  context.input.direction='b';const other=await vm.runInContext('SelectionQA.load(SelectionQA.clean(input))',context);assert.equal(other.messages.length,0);assert.notEqual(other.key,repeat.key);
+  context.input.direction='a';context.input.documentKey='course:2';const next=await vm.runInContext('SelectionQA.load(SelectionQA.clean(input))',context);assert.equal(next.messages.length,0);
+  assert.equal(data.codexChat.length,0);assert.equal(data.globalPersonalBackground,undefined);
+  const course={title:'指标课',goal:'理解DAU',prerequisite_check:'什么是去重',sections:[{title:'活跃',explanation:'解释',example:'例子',question:'问题'},{title:'去重',explanation:'解释',example:'例子',question:'问题'}],exercise:'写字典',acceptance:'口径一致',limitations:'需核对',resources:[{title:'官方文档',url:'https://example.org/docs',note:'适合入门'}]};
+  context.reply=JSON.stringify(course);assert.equal(vm.runInContext('LearningCourses.parse(reply).sections.length',context),2);
+  await vm.runInContext('LearningCourses.save("a",{...LearningCourses.parse(reply),id:"c1",status:"draft"})',context);
+  assert.equal((await vm.runInContext('LearningCourses.list("b")',context)).length,0);
+  course.resources[0].url='javascript:alert(1)';context.reply=JSON.stringify(course);assert.throws(()=>vm.runInContext('LearningCourses.parse(reply)',context));
+  console.log('PASS: isolated selection threads, context identity, no main-chat writes, course parsing and safe links');
+})().catch(error=>{console.error(error);process.exitCode=1});

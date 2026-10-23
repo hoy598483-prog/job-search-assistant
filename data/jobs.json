@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "samples": [
+    {
+      "id": "job_01",
+      "category": "AI产品：企业协作",
+      "duties": [
+        "探索企业协作场景中的AI机会",
+        "概念验证、快速原型、用户验证",
+        "跨团队推动落地和迭代"
+      ],
+      "requirements": [
+        {
+          "summary": "本科及以上学历",
+          "source_quote": "本科及以上学历"
+        },
+        {
+          "summary": "理解LLM、RAG、Agent与企业落地",
+          "source_quote": "熟悉大语言模型、RAG、Agent 等核心概念及企业级落地逻辑"
+        },
+        {
+          "summary": "用户洞察和验证",
+          "source_quote": "具备较强的产品 sense 与用户洞察能力"
+        },
+        {
+          "summary": "协作办公与知识管理理解",
+          "source_quote": "对协同办公、知识管理场景有一定理解"
+        }
+      ],
+      "preferred": [
+        "有企业级 AI 产品探索或从 0 到 1 的落地经验者优先"
+      ],
+      "filename": "codex-clipboard-109a76a6-63db-4dcb-87a8-06e19e5fec6f.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "基于截图可见部分摘录，不是完整转写；引用定位为该样本截图。学历措辞以原文为准，专业适用性需核实。"
+    },
+    {
+      "id": "job_02",
+      "category": "AI产品：内容或海外",
+      "duties": [],
+      "requirements": [
+        {
+          "summary": "AI产品使用经验",
+          "source_quote": "对 AI 产品有真实使用经验，不是只看过几篇文章"
+        },
+        {
+          "summary": "理解基础概念",
+          "source_quote": "理解大模型、Agent、多模态、RAG、工作流等基本概念"
+        },
+        {
+          "summary": "技术转化为业务价值",
+          "source_quote": "能把技术能力翻译成业务价值"
+        },
+        {
+          "summary": "相关方向兴趣（至少一个）",
+          "source_quote": "对内容、小说、漫画、短剧、IP、海外市场至少有一个方向真的感兴趣"
+        },
+        {
+          "summary": "项目推进与验证",
+          "source_quote": "有项目推进能力，能从模糊问题推进到上线验证"
+        }
+      ],
+      "preferred": [
+        "自己重度使用 AI 工具",
+        "做过 AIGC、多模态、Agent、AI 工作流产品",
+        "有海外产品、本地化、全球化增长经验"
+      ],
+      "filename": "codex-clipboard-61a3c3a5-eec8-4810-81f3-4407cbde0ff4.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "基于截图可见部分摘录，不是完整转写；引用定位为该样本截图。学历措辞以原文为准，专业适用性需核实。"
+    },
+    {
+      "id": "job_03",
+      "category": "算法与智能体研发",
+      "duties": [],
+      "requirements": [
+        {
+          "summary": "机器学习、深度学习、统计与运筹基础",
+          "source_quote": "具备扎实的机器学习、深度学习、统计学与运筹学理论基础"
+        },
+        {
+          "summary": "Python与模型训练优化",
+          "source_quote": "熟练使用 Python 完成算法实现、模型训练与优化"
+        },
+        {
+          "summary": "深度学习框架",
+          "source_quote": "熟悉 PyTorch/TensorFlow 等主流深度学习框架"
+        },
+        {
+          "summary": "业务抽象与方案设计",
+          "source_quote": "可精准拆解复杂业务场景，转化为可落地的算法任务、智能体任务"
+        }
+      ],
+      "preferred": [
+        "有垂类智能体、多Agent系统搭建等实践落地经验者优先",
+        "有时序预测、运筹优化等数据挖掘相关项目落地经验者优先"
+      ],
+      "filename": "codex-clipboard-54952697-64c7-44d4-b747-60b4a475fe3c.png",
+      "occluded": true,
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "partial_occlusion",
+      "hiring_status": "unverified",
+      "note": "基于截图可见部分摘录，不是完整转写；引用定位为该样本截图。学历措辞以原文为准，专业适用性需核实。"
+    },
+    {
+      "id": "job_04",
+      "category": "Agent应用开发",
+      "duties": [],
+      "requirements": [
+        {
+          "summary": "硕士及以上，相关专业",
+          "source_quote": "硕士以上学历，人工智能、计算机、数据科学、软件工程等相关专业"
+        },
+        {
+          "summary": "基础服务化与任一Agent框架",
+          "source_quote": "了解基础服务化开发，掌握 LangChain / LangGraph / Agno 等任一 Agent 框架，具备独立落地能力"
+        },
+        {
+          "summary": "至少一项实战（择一，非全部）",
+          "source_quote": "拥有 RAG、知识图谱、数据治理、智能流程编排至少一项实战项目经验"
+        },
+        {
+          "summary": "业务拆解与方案",
+          "source_quote": "可拆解业务问题并转化为可行的 AI 技术方案"
+        }
+      ],
+      "preferred": [],
+      "conditions": [
+        "无硬性工作年限要求，硕博应届生、在校科研项目、个人 AI 项目经历均可"
+      ],
+      "filename": "codex-clipboard-e1f477e8-867f-4b31-a89c-b7c5593ef8cf.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "基于截图可见部分摘录，不是完整转写；引用定位为该样本截图。学历措辞以原文为准，专业适用性需核实。"
+    },
+    {
+      "id": "job_05",
+      "category": "工业/CAD智能体开发",
+      "duties": [],
+      "requirements": [
+        {
+          "summary": "相关专业，明确包含数学",
+          "source_quote": "计算机科学、软件工程、人工智能、数学等专业"
+        },
+        {
+          "summary": "Python与智能体实践",
+          "source_quote": "熟悉Python：具备一定的Python编程功底，尤其是在构建智能体方面具有丰富的实践经验"
+        },
+        {
+          "summary": "主流Agent框架",
+          "source_quote": "熟悉并能熟练运用主流的智能体开发框架"
+        },
+        {
+          "summary": "C++、CAD与测试",
+          "source_quote": "能够理解CAD后端代码，并能够编写测试用例来验证和测试由智能体生成的封装函数"
+        },
+        {
+          "summary": "AI/ML框架",
+          "source_quote": "熟悉至少一种主流的AI/ML框架（如PyTorch）"
+        },
+        {
+          "summary": "数据处理经验",
+          "source_quote": "有处理大规模非结构化或半结构化数据（如文本、代码）的经验"
+        }
+      ],
+      "preferred": [
+        "有开发智能体或类似自动编程工具的经验者优先"
+      ],
+      "filename": "codex-clipboard-f0093b52-ce56-45a4-9aaf-b63c4dce73b8.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "基于截图可见部分摘录，不是完整转写；引用定位为该样本截图。学历措辞以原文为准，专业适用性需核实。"
+    },
+    {
+      "id": "job_06",
+      "category": "量化场景 AI / 大模型工程（推断）",
+      "duties": ["面向高并发、低延迟的量化业务场景设计技术方案"],
+      "requirements": [
+        {"summary": "相关学历专业", "source_quote": "本科及以上学历，计算机、人工智能、数据科学、金融工程等相关专业"},
+        {"summary": "Python、另一门工程语言与深度学习框架", "source_quote": "精通 Python（必备），熟悉 Go/Java 中至少 1 种语言，能熟练使用 PyTorch/TensorFlow 等深度学习框架"},
+        {"summary": "大模型优化实践", "source_quote": "熟悉大模型优化方法论，至少实践过 1 种核心技术（SFT/RLHF/DPO/PPO）"},
+        {"summary": "RAG 与 Agent 系统", "source_quote": "掌握大模型应用关键技术，有 RAG 系统搭建、Agent 工具整合实战经验"},
+        {"summary": "系统设计与架构", "source_quote": "具备较强的系统设计与架构能力，能独立拆解复杂业务问题，输出可落地的技术方案"}
+      ],
+      "preferred": [],
+      "conditions": ["年龄不限，越年轻越好"],
+      "filename": "codex-clipboard-5ff41130-67fe-453f-8271-d076db727a6e.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "截图未显示完整岗位名称与公司。该样本偏大模型工程，量化业务场景不等于传统量化研究或交易岗位。"
+    },
+    {
+      "id": "job_07",
+      "category": "量化研究 / 机器学习（推断）",
+      "duties": [],
+      "requirements": [
+        {"summary": "名校硕士及相关专业", "source_quote": "国内外知名院校本科及以上，数学/统计/物理/计算机/金融工程等相关专业"},
+        {"summary": "数学与机器学习基础", "source_quote": "扎实的数理基础，熟练掌握概率统计、线性代数、机器学习方法"},
+        {"summary": "Python 与数据分析机器学习工具", "source_quote": "熟练使用Python，熟悉Pandas/NumPy等数据分析工具，掌握常用机器学习方法（Scikit-learn、LightGBM、XGBoost等）"}
+      ],
+      "preferred": [],
+      "filename": "codex-clipboard-3d6c2dd9-d9f9-454e-99d1-335e43ce43e4.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "截图仅显示任职要求，未显示岗位职责、公司和职位名。"
+    },
+    {
+      "id": "job_08",
+      "category": "量化研究（推断）",
+      "duties": ["把模糊市场直觉转为可检验假设，设计实验并解释结果", "撰写结构完整、图表清晰的研究报告"],
+      "requirements": [
+        {"summary": "Python 科学计算与数据工程", "source_quote": "熟练使用 Python，熟悉 NumPy、pandas、scikit-learn 等数据科学栈，能独立完成数据清洗、特征工程与向量化计算"},
+        {"summary": "可维护研究代码与数据库", "source_quote": "具备良好的代码习惯：模块化、可复用、有版本控制（Git）意识，能写出他人可读可维护的研究代码；熟悉数据库的基本操作"},
+        {"summary": "统计建模与时间序列", "source_quote": "扎实的概率论、统计学基础：假设检验、回归分析、时间序列分析"},
+        {"summary": "研究建模", "source_quote": "能够将模糊的市场直觉转化为可检验的假设，设计合理的实验并客观解释结果"},
+        {"summary": "研究沟通", "source_quote": "能用清晰的逻辑和数据向非技术背景的同事解释研究中碰到的问题和结论"}
+      ],
+      "preferred": [],
+      "filename": "codex-clipboard-81aee506-0088-4607-904b-f7bf5d6dcade.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "截图展示编程、统计建模和沟通能力部分，未显示岗位名、公司和完整要求。"
+    },
+    {
+      "id": "job_09",
+      "category": "A股量化因子研究（推断）",
+      "duties": ["围绕A股市场开展多频率数据下的量化因子研究和信号挖掘", "参与自动化因子挖掘与评估流程，支持因子生成、筛选和组合", "分析因子有效性、相关性和稳定性", "持续跟踪收益和风险评估并修正模型"],
+      "requirements": [
+        {"summary": "数理或金融相关背景", "source_quote": "数学、物理、计算机、金工等相关专业优先"},
+        {"summary": "概率统计、模型与机器学习", "source_quote": "具备扎实的数理基础，对于经典概率统计理论和模型有自己的理解。对机器学习有深入研究和实践能力优先"},
+        {"summary": "Python、Linux 与工程化", "source_quote": "具备良好的编程能力，熟练使用python，擅长linux编程工作环境，具备较好工程化意识和代码习惯"},
+        {"summary": "抗压和结果导向", "source_quote": "具备抗压能力，有结果导向意识"}
+      ],
+      "preferred": [],
+      "filename": "codex-clipboard-8dee8592-da82-4cf3-8491-290f0d75388a.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "职责明确涉及A股因子研究和组合优化；公司、职位名和完整上下文未显示。"
+    },
+    {
+      "id": "job_10",
+      "category": "量化交易 / 研究支持（推断）",
+      "duties": [],
+      "requirements": [
+        {"summary": "学历与数理相关背景", "source_quote": "计算机专业或数理统计本科及以上学历，优秀应届生优先"},
+        {"summary": "金融理论基础", "source_quote": "具备比较扎实的金融理论基础"},
+        {"summary": "Python 与交易脚本", "source_quote": "熟练掌握Python编程，能够编写并优化交易脚本"},
+        {"summary": "数据处理和量化分析", "source_quote": "优秀的数据分析能力，对数据敏感，擅长数据整理和分析"},
+        {"summary": "研究与协作能力", "source_quote": "工作踏实、细致，积极主动解决问题，具备良好的学习能力、抗压能力，以及出色的沟通和团队合作精神"}
+      ],
+      "preferred": ["有大型券商实习经验者优先", "有量化策略开发或执行经验者优先"],
+      "filename": "codex-clipboard-e42a49bb-b008-40fc-89bb-a39336d7e34e.png",
+      "title": null,
+      "company": null,
+      "city": null,
+      "url": null,
+      "published_at": null,
+      "source_type": "user_screenshot",
+      "category_is_inferred": true,
+      "source_status": "excerpt_only",
+      "hiring_status": "unverified",
+      "note": "截图未显示职位名称和公司；薪资15k-25k为截图所示信息，但不用于能力判断。"
+    }
+  ]
+}

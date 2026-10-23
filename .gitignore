@@ -1,0 +1,18 @@
+__pycache__/
+output/
+.env
+.venv/
+
+# Local user data, native registration and build outputs
+work/
+data/workspaces/
+data/profile.json
+data/session.json
+browser_companion/native_host.json
+browser_companion/native_host_config.json
+browser_companion/native_host_launcher.bat
+*.exe
+*.pyc
+*.db
+*.sqlite*
+.env.*

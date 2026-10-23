@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "required_fields": ["id", "source_kind", "platform", "url_or_user_provided", "published_at", "collected_at", "quote", "use", "review_status"],
+  "optional_fields": ["title", "author_or_channel", "engagement.view_count", "engagement.platform_percentile", "retrieved_at", "review_notes"],
+  "source_kind": ["official_job", "official_technical", "community_experience", "user_artifact"],
+  "use": ["market_requirement", "implementation_constraint", "project_pattern", "user_problem_hypothesis", "completion_evidence"],
+  "review_status": ["unreviewed", "reviewed", "rejected"],
+  "rules": [
+    "community_experience 不得单独生成 market_requirement。",
+    "所有影响计划的结论必须保留 quote 与来源。",
+    "无 URL 的资料需标识为 user_provided，并保存用户提供日期。",
+    "被拒绝资料保留审阅原因，但不进入计划。",
+    "published_at 用于时效度；越新越优先用于当前岗位和工具信息。",
+    "view_count 仅用于同一平台、同类内容内的阅读优先级，不能跨平台直接比较。",
+    "浏览量不改变资料可用于何种结论；来源类别、引用和审阅状态决定用途。"
+  ]
+}

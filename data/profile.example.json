@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "target_directions": [],
+  "foreign_trade_meaning_confirmed": false,
+  "location": {
+    "mode": "unrestricted",
+    "target_city": null
+  },
+  "application_stage": "未填写",
+  "education": {
+    "degree": "未填写",
+    "major": "未填写",
+    "doctoral_experience": null
+  },
+  "skills": [],
+  "showcase_experience": [],
+  "weekly_prep_hours": null,
+  "project_learning_hours_per_day": 2,
+  "applications_and_interviews_have_separate_time": true,
+  "interaction_preference": "通过聊天提供和确认资料",
+  "learning_preference": "基础讲解和提问",
+  "product_priority": [
+    "目标岗位能力差距",
+    "当天行动任务"
+  ],
+  "experience_evidence": [],
+  "unknowns": []
+}

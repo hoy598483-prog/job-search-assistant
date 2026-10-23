@@ -1,0 +1,25 @@
+{
+  "role_group": "AI产品",
+  "goal": "正在投递这一类岗位，希望先补足跨岗位可迁移的项目证据",
+  "briefs": [
+    {
+      "id": "user-brief-001",
+      "title": "用户填写的岗位名称，可留空",
+      "company": null,
+      "city": null,
+      "priority": 5,
+      "source_kind": "user_provided",
+      "source_text": "用户粘贴或填写的招聘简介原文",
+      "source_message_id": "聊天消息ID",
+      "status": "unreviewed",
+      "items": []
+    }
+  ],
+  "workflow": [
+    "用户用聊天提交岗位类别与一至五条招聘简介。",
+    "提取器为每条简介生成带原文引用的候选条目。",
+    "Agent 审阅并为同义能力附 capability_key；未审阅内容不得进入计划。",
+    "类别聚合将重复出现的 required 标为 core，将高优先级单一 required 标为 targeted。",
+    "用户从至多三个项目中选择一个；计划优先覆盖 core，再选择一个 targeted 能力。"
+  ]
+}

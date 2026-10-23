@@ -1,0 +1,25 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>求职助理工作台</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="learning.css"><body><main>
+<h1 id="workspace-title">数据收集</h1><p id="workspace-description">收集同类岗位文本，整理为制定计划的依据。</p>
+<section class="workspace-settings"><div data-workspace-page="plan" hidden><h2>连接 Codex</h2><button id="connect-codex">连接本机 Codex</button><p id="provider-status" role="status">Codex 登录尚未检查</p></div>
+<label>准备方向 <select id="workspace"><option value="ai-product-job-agent">AI 产品求职</option></select></label><button id="direction-new">新建准备方向</button><button id="direction-delete">删除当前方向</button>
+<details><summary>编辑方向目标</summary>
+<label>方向名称<input id="direction-name" maxlength="80" placeholder="例如：Agent 开发工程师"></label>
+<label>目标岗位<textarea id="direction-target" maxlength="4000" placeholder="岗位类型、求职目标和时间安排"></textarea></label>
+<button id="direction-save">保存方向信息</button></details><p id="direction-status" role="status"></p>
+<details><summary>连接详情与分析设置</summary><p id="extension"></p><label>本次连接状态 <input id="token" type="text" autocomplete="off" readonly placeholder="尚未连接"></label><button id="forget-token">重新连接桥接</button>
+<label>分析方式 <select id="provider"><option value="mock">离线：保留原文，不调用模型</option><option value="codex">Codex CLI：使用官方已有登录</option><option value="api">可选 API：使用本机环境变量，可能产生费用</option></select></label>
+<button id="provider-login">启动 Codex 官方登录</button><button id="provider-check">重新检查登录</button>
+<small>选择在线分析方式后会请求连接授权；点击分析时再次确认发送文本。Claude Code 暂未接入。文本收藏无需连接。</small></details></section>
+<section data-workspace-page="plan" hidden><h2>学习笔记本</h2><p>按日期收集知识点与已完成任务。七天任务勾选完成后自动收集，旧记录没有完成日期的标为日期未知。</p><button id="notebook-open">打开学习笔记本</button><button id="notebook-collect">收藏选中文字 / 最新回复为知识笔记</button><button id="notebook-archive">将已完成的当前计划收集到笔记本</button></section>
+<section data-workspace-page="plan" hidden><h2>共享个人背景</h2><p id="background-summary-status"></p><button id="background-open">管理个人背景（独立页面）</button><label><input id="background-use" type="checkbox" checked>本次聊天和计划使用已确认的全局背景</label></section>
+<section id="chat-section" data-workspace-page="plan" hidden><h2>与 Codex 制定计划</h2><p><a href="#collect">← 返回数据收集</a></p><p>从已保存文本中选择上下文，再让 Codex 归纳能力、生成项目备选或修改方案。每次发送前确认；方案由你选择。</p><button id="chat-context-refresh">刷新已保存样本</button><div id="chat-context"></div><div id="chat-history" role="log" aria-live="polite"></div><label>消息<textarea id="chat-input" placeholder="根据我选择的样本，提出适合入门的 Agent 项目备选方案。"></textarea></label><button id="chat-send" disabled>发送给 Codex</button><button id="chat-projects" disabled>根据样本生成项目备选</button><button id="chat-clear">清空本分区对话</button><p id="chat-status" role="status">先连接 Codex 并检查登录。</p></section>
+<section data-workspace-page="collect"><h2>待分析文本（最多六段）</h2><p>扩展只保存用户选中的文字或当前页面正文；收藏对象是文本样本，不是标签页、岗位链接或页面标题。发送前可删去正文中的个人信息。</p>
+<p><a href="#plan">样本准备好后，前往 Codex 制定计划 →</a></p><button id="refresh">刷新采集文本</button><button id="clear">清空采集</button><button id="analyze">分析 / 对比选中页面</button><div id="pages"></div></section>
+<p id="notice" role="status"></p><div id="results" class="grid" data-workspace-page="collect"></div>
+<section data-workspace-page="collect"><h2>收藏与手动进度</h2><button id="saved">查看本方向收藏</button><div id="jobs"></div></section>
+<section data-workspace-page="plan" hidden><h2>当前方向 · 我的项目与计划</h2><p>接受Codex七天草案后，项目和计划会自动填入这里；也可手动编辑记录。未经接受的建议不会导入。</p><label>已选项目<input id="direction-project" maxlength="200"></label><label>准备计划<textarea id="direction-plan" maxlength="20000"></textarea></label><label>进度与成果<textarea id="direction-progress" maxlength="20000"></textarea></label><button id="direction-plan-save">保存项目、计划与进度</button></section>
+<section data-workspace-page="plan" hidden><h2>Codex 一周计划</h2><div id="weekly-proposal"></div><button id="weekly-accept">接受并导入计划</button><button id="weekly-revise">不接受，提出修改</button><h3>当前已接受的计划</h3><div id="weekly-active"></div></section>
+<details data-workspace-page="plan" hidden><summary>旧版模板计划与历史记录（不由 Codex 生成）</summary><section><h2>七天项目训练</h2><p>新项目方案请在上方 Codex 聊天中生成和选择。这里保留旧版模板和历史记录。</p>
+<label>每天分钟数 <input id="minutes" type="number" min="15" max="120" value="60"></label><button id="train">获取项目候选</button><div id="options"></div><button id="progress">查看计划与审阅记录</button>
+<label>提交第几天的成果 <input id="day" type="number" min="1" max="7" value="1"></label><textarea id="submission" placeholder="成果说明、文件路径或证据；提交后等待审阅"></textarea><button id="submit">提交成果供审阅</button><div id="training"></div></section>
+</details></main><script src="notebook_store.js"></script><script src="weekly.js"></script><script src="panel.js"></script><script src="ui_shell.js"></script><script src="qa_store.js"></script><script src="selection_host.js"></script></body></html>
