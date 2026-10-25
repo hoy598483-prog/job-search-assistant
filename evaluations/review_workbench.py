@@ -90,11 +90,11 @@ class ReviewStore:
             if not isinstance(case, dict) or not isinstance(case.get("id"), str):
                 raise ValueError("Invalid case ID")
             source = case.get("source")
-            if (not isinstance(source, str) or not source.strip()
-                    or len(source) > 60000 or case["id"] in ids):
+            if ((source is not None and (not isinstance(source, str) or not source.strip() or len(source) > 60000))
+                    or case["id"] in ids):
                 raise ValueError("Invalid or duplicate case source")
             ids.add(case["id"])
-            sha = fingerprint(source)
+            sha = fingerprint(source) if source else None
             if case.get("source_sha256") and sha != case["source_sha256"]:
                 raise ValueError("Source fingerprint mismatch: " + case["id"])
             # No guessing gold labels from upstream source material.
@@ -103,7 +103,7 @@ class ReviewStore:
         self.by_id = {case["id"]: case for case in self.cases}
         self.origin = dataset_doc.get("origin", "unspecified_source")
         self.dataset_id = hashlib.sha256(json.dumps(
-            [(c["id"], fingerprint(c["source"])) for c in self.cases],
+            [(c["id"], fingerprint(c["source"]) if c.get("source") else None) for c in self.cases],
             ensure_ascii=False, separators=(",", ":")).encode("utf-8")).hexdigest()
         self.state = {"dataset_id": self.dataset_id, "entries": {}}
         if self.state_path.exists():
@@ -116,6 +116,25 @@ class ReviewStore:
         else:
             # Do not import any upstream gold as confirmed human review automatically.
             self.state = {"dataset_id": self.dataset_id, "entries": {}}
+
+    def set_source(self, case_id, source):
+        if case_id not in self.by_id:
+            raise ValueError("Unknown case ID")
+        if not isinstance(source, str) or not source.strip() or len(source) > 60000:
+            raise ValueError("JD source must be 1–60000 characters")
+        previous = self.state["entries"].get(case_id, {})
+        original = self.by_id[case_id].get("source") or ""
+        before = previous.get("source", original)
+        if before != source:
+            # Replacing the source invalidates all old labels and review status.
+            self.state["entries"][case_id] = {
+                "source": source, "source_sha256": fingerprint(source),
+                "status": "unlabeled", "items": [], "note": "",
+                "reviewed_at": None,
+            }
+            atomic_json(self.state_path, self.state)
+        return {"id": case_id, "length": len(source),
+                "source_sha256": fingerprint(source)}
 
     def overview(self):
         complete = sum(self.state["entries"].get(c["id"], {}).get("status") == "reviewed"
@@ -135,8 +154,9 @@ class ReviewStore:
             raise ValueError("Unknown case ID")
         c = self.by_id[case_id]
         entry = self.state["entries"].get(case_id, {})
-        return {"id": case_id, "source": c["source"],
-                "source_sha256": fingerprint(c["source"]),
+        source = entry.get("source", c.get("source") or "")
+        return {"id": case_id, "source": source,
+                "source_sha256": fingerprint(source) if source else None,
                 "company": c.get("company") or "",
                 "title": c.get("title") or "", "url": c.get("url") or "",
                 "annotation_status": entry.get("status", "unlabeled"),
@@ -149,12 +169,16 @@ class ReviewStore:
         if not isinstance(note, str) or len(note) > 2000:
             raise ValueError("Note must be at most 2000 characters")
         cleaned = normalized_items(items)
-        source = self.by_id[case_id]["source"]
+        entry_before = self.state["entries"].get(case_id, {})
+        source = entry_before.get("source", self.by_id[case_id].get("source") or "")
+        if not source:
+            raise ValueError("Capture JD source before annotating")
         if reviewed:
             if confirmed_complete is not True:
                 raise ValueError("Explicit completeness confirmation is required")
             validate(source, {"items": cleaned})
         entry = {"status": "reviewed" if reviewed else "draft",
+                 "source": source,
                  "items": cleaned, "note": note,
                  "source_sha256": fingerprint(source),
                  "reviewed_at": datetime.now(timezone.utc).isoformat() if reviewed else None}
@@ -165,7 +189,10 @@ class ReviewStore:
     def suggest(self, case_id, provider="baseline", consent=False):
         if case_id not in self.by_id:
             raise ValueError("Unknown case ID")
-        source = self.by_id[case_id]["source"]
+        current = self.state["entries"].get(case_id, {})
+        source = current.get("source", self.by_id[case_id].get("source") or "")
+        if not source:
+            raise ValueError("Capture JD source before suggesting")
         if provider == "baseline":
             candidate = simple_baseline(source)
         elif provider == "codex":
@@ -193,11 +220,14 @@ class ReviewStore:
             entry = self.state["entries"].get(case["id"], {})
             if entry.get("status") != "reviewed":
                 continue
-            if entry.get("source_sha256") != fingerprint(case["source"]):
+            source = entry.get("source", case.get("source") or "")
+            if entry.get("source_sha256") != fingerprint(source):
                 raise ValueError("Source changed since human review")
             validated = {"items": normalized_items(entry["items"])}
-            validate(case["source"], validated)
+            validate(source, validated)
             record = {k: v for k, v in case.items() if k not in ("gold", "annotation_status")}
+            record["source"] = source
+            record["source_sha256"] = fingerprint(source)
             record["gold"] = validated
             record["annotation_status"] = "reviewed"
             record["reviewed_at"] = entry["reviewed_at"]
@@ -288,6 +318,8 @@ def make_handler(store):
                     # Never mark reviewed on ordinary draft saves.
                     result = store.save(payload.get("id"), payload.get("items"),
                                         reviewed=False, note=payload.get("note", ""))
+                elif self.path == "/api/source":
+                    result = store.set_source(payload.get("id"), payload.get("source"))
                 elif self.path == "/api/review":
                     result = store.save(payload.get("id"), payload.get("items"),
                                         reviewed=True,
