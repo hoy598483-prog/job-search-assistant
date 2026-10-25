@@ -21,7 +21,7 @@ class RealCorpusTests(unittest.TestCase):
                  "location": {"name": "Remote"}, "content": description}
                 for i in range(60)
             ]}
-        result = collect(["example"], target=50, fetch=fetch)
+        result = collect(["example"], target=50, per_board=50, fetch=fetch)
         self.assertEqual(len(seen), 1)
         self.assertEqual(result["collected_size"], 50)
         self.assertEqual(result["annotated_size"], 0)
