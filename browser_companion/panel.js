@@ -108,7 +108,7 @@ async function api(action, data = {}, retried = false) {
       const text = data.page.text;
       if (typeof text !== "string" || !text.trim()) throw new Error("请先输入文本");
       const existing = jobs.find(job => job.text === text);
-      if (!existing) jobs.push({id: crypto.randomUUID(), text, saved_at: new Date().toISOString(), status: "saved"});
+      if (!existing) jobs.push({id: crypto.randomUUID(), text, source_url: /^https?:\\/\\//i.test(data.page.url || "") ? data.page.url.slice(0, 4096) : null, source_title: String(data.page.title || "").slice(0, 300), captured_at: String(data.page.captured_at || "").slice(0, 80), saved_at: new Date().toISOString(), status: "saved"});
     } else if (action === "delete") {
       jobs = jobs.filter(job => job.id !== data.id);
     } else {
