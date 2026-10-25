@@ -15,7 +15,7 @@ document.getElementById("capture").onclick = async () => {
       const selected = window.getSelection().toString().trim();
       const root = document.querySelector("main,[role=main],article") || document.body;
       const text = (selected || clean(root)).slice(0, 60000);
-      return {pages: text ? [{text, captured_at}] : [], mode: selected ? "selection" : "page-text"};
+      return {pages: text ? [{text, captured_at, url: location.href, title: document.title}] : [], mode: selected ? "selection" : "page-text"};
     }});
     if (!result.pages?.length) throw new Error("未找到岗位内容；可先选中招聘文本再采集");
     const key = "pages:" + activeDirection;
