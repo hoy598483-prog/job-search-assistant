@@ -32,7 +32,9 @@ def make_handler(service, token, origin, port):
 
         def do_OPTIONS(self):
             self.send_response(204)
-            self.send_header("Access-Control-Allow-Origin", self.headers.get("Origin", "*"))
+            if not self.allowed() or self.headers.get("Origin") != origin:
+                return self.reply(403, {"error": "请求来源不受信任"})
+            self.send_header("Access-Control-Allow-Origin", origin)
             self.send_header("Access-Control-Allow-Methods", "POST")
             self.send_header("Access-Control-Allow-Headers", "Authorization, Content-Type")
             self.end_headers()
@@ -45,6 +47,9 @@ def make_handler(service, token, origin, port):
             self.reply(410, {"error": "请使用扩展本机桥接连接，此HTTP握手已停用"})
 
         def do_POST(self):
+            # Enforce both loopback Host and the registered extension Origin.
+            if not self.allowed() or self.headers.get("Origin") != origin:
+                return self.reply(403, {"error": "请求来源不受信任"})
             self.connection.settimeout(10)
             try:
                 length = int(self.headers.get("Content-Length", "0"))
