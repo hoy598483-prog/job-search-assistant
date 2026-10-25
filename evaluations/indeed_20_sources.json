@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "origin": "Indeed Canada public posting pages located via web search",
+  "purpose": "source link manifest for human-consented JD capture and evaluation",
+  "location_scope": "Greater Vancouver, BC, Canada",
+  "date_checked": "2026-10-24",
+  "collection_status": "20_source_pages_found_not_full_text_corpus",
+  "captured_full_jds": 0,
+  "reviewed_gold_labels": 0,
+  "rights_notice": "Links and bibliographic metadata only. No third-party full job descriptions are copied. Confirm permission before storing any text.",
+  "cases": [
+    {
+      "id": "indeed:4ebed33b5d3dd63a",
+      "indeed_jk": "4ebed33b5d3dd63a",
+      "title": "AI Engineer",
+      "company": "Comm100 Network Corporation",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=4ebed33b5d3dd63a",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:c015b50818c4f45b",
+      "indeed_jk": "c015b50818c4f45b",
+      "title": "Cloud AI Engineer",
+      "company": "Noise",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=c015b50818c4f45b",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:3291d99ab8a63304",
+      "indeed_jk": "3291d99ab8a63304",
+      "title": "Machine Learning Engineer",
+      "company": "Clio",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=3291d99ab8a63304",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:7967676837ac8ad7",
+      "indeed_jk": "7967676837ac8ad7",
+      "title": "Senior AI Engineer",
+      "company": "Comm100 Network Corporation",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=7967676837ac8ad7",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:f4a76f8f42928edc",
+      "indeed_jk": "f4a76f8f42928edc",
+      "title": "Machine Learning Engineer",
+      "company": "Wix / DeviantArt",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=f4a76f8f42928edc",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:4163edf7c782a088",
+      "indeed_jk": "4163edf7c782a088",
+      "title": "Senior AI Engineer",
+      "company": "Unblocked",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=4163edf7c782a088",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:e2c70de1d92955c1",
+      "indeed_jk": "e2c70de1d92955c1",
+      "title": "Sr Associate Machine Learning Engineer",
+      "company": "Workday",
+      "category": "ai_engineering",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=e2c70de1d92955c1",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:9c4abc8bff3b5b89",
+      "indeed_jk": "9c4abc8bff3b5b89",
+      "title": "Associate Data Scientist",
+      "company": "AlgaeCal",
+      "category": "data_science",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=9c4abc8bff3b5b89",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:5f3e8adf3c1517ee",
+      "indeed_jk": "5f3e8adf3c1517ee",
+      "title": "Data Scientist",
+      "company": "Remarcable, Inc.",
+      "category": "data_science",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=5f3e8adf3c1517ee",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:c82a2a4a0079a967",
+      "indeed_jk": "c82a2a4a0079a967",
+      "title": "Data Scientist III",
+      "company": "Teck",
+      "category": "data_science",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=c82a2a4a0079a967",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:9fadcdee7056847b",
+      "indeed_jk": "9fadcdee7056847b",
+      "title": "Sr Product Data Scientist",
+      "company": "Workday",
+      "category": "data_science",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=9fadcdee7056847b",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:b4e7786655147ffb",
+      "indeed_jk": "b4e7786655147ffb",
+      "title": "Data Scientist, ADE Analytics",
+      "company": "Amazon Development Centre Canada ULC",
+      "category": "data_science",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=b4e7786655147ffb",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:876c677ef71249ce",
+      "indeed_jk": "876c677ef71249ce",
+      "title": "Data Analyst",
+      "company": "Connor, Clark & Lunn Financial Group Ltd.",
+      "category": "data_analysis",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=876c677ef71249ce",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:803713184abd36f5",
+      "indeed_jk": "803713184abd36f5",
+      "title": "Data Analyst, Investment Data Architecture",
+      "company": "Connor, Clark & Lunn Financial Group Ltd.",
+      "category": "data_analysis",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=803713184abd36f5",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:57c89a700050dbe4",
+      "indeed_jk": "57c89a700050dbe4",
+      "title": "Advanced Data Analyst - EA SPORTS FC",
+      "company": "Electronic Arts",
+      "category": "data_analysis",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=57c89a700050dbe4",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:41fd7b04760f0bdc",
+      "indeed_jk": "41fd7b04760f0bdc",
+      "title": "Data Analyst (Claims)",
+      "company": "Moe's Home Collection",
+      "category": "data_analysis",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=41fd7b04760f0bdc",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:3518519156f21c03",
+      "indeed_jk": "3518519156f21c03",
+      "title": "Data Analyst",
+      "company": "TransLink",
+      "category": "data_analysis",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=3518519156f21c03",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:10f06e2f659f28eb",
+      "indeed_jk": "10f06e2f659f28eb",
+      "title": "Data Operations & Solutions Analyst",
+      "company": "Canaccord Genuity Corp.",
+      "category": "data_analysis",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=10f06e2f659f28eb",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:25ec098c46aa3616",
+      "indeed_jk": "25ec098c46aa3616",
+      "title": "Quantitative Equity Product Analyst",
+      "company": "CCLIM - Quantitative Equity",
+      "category": "quant",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=25ec098c46aa3616",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    },
+    {
+      "id": "indeed:8c9e12726a67316d",
+      "indeed_jk": "8c9e12726a67316d",
+      "title": "Quantitative Equity Analyst Reliability Engineering",
+      "company": "CCLIM - Quantitative Equity",
+      "category": "quant",
+      "location": "Vancouver, BC area",
+      "url": "https://ca.indeed.com/viewjob?jk=8c9e12726a67316d",
+      "source_capture_status": "pending",
+      "annotation_status": "unlabeled"
+    }
+  ]
+}
