@@ -12,7 +12,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Offline regression suite
-        run: python -m unittest -v evaluations.test_agent_benchmark evaluations.test_real_corpus test_extract_job test_companion
+        run: python -m unittest -v evaluations.test_agent_benchmark evaluations.test_real_corpus evaluations.test_run_codex_eval test_extract_job test_companion
       - name: Deterministic benchmark
         run: python -m evaluations.agent_benchmark --baseline
   node-ui:
